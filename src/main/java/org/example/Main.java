@@ -25,6 +25,23 @@ public class Main {
         System.out.println(
             "X will play first. Enter a slot number to place X in:");
 
+         while (winner == null) {
+            int numInput;
+
+            try {
+                numInput = in.nextInt();
+                if (!(numInput > 0 && numInput <= 9)) {
+                    System.out.println(
+                        "Invalid input; re-enter slot number:");
+                    continue;
+                }
+            }
+            catch (InputMismatchException e) {
+                System.out.println(
+                    "Invalid input; re-enter slot number:");
+                continue;
+            }
+
     }
 
     static void printBoard()
