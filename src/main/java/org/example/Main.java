@@ -41,6 +41,35 @@ public class Main {
                     "Invalid input; re-enter slot number:");
                 continue;
             }
+             if (board[numInput - 1].equals(
+                    String.valueOf(numInput))) {
+                board[numInput - 1] = turn;
+ 
+                if (turn.equals("X")) {
+                    turn = "O";
+                }
+                else {
+                    turn = "X";
+                }
+ 
+                printBoard();
+                winner = checkWinner();
+            }
+            else {
+                System.out.println(
+                    "Slot already taken; re-enter slot number:");
+            }
+        }
+        if (winner.equalsIgnoreCase("draw")) {
+            System.out.println(
+                "It's a draw! Thanks for playing.");
+        }
+        else {
+            System.out.println(
+                "Congratulations! " + winner
+                + "'s have won! Thanks for playing.");
+        }
+      in.close();
 
     }
 
